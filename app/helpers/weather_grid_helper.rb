@@ -1,0 +1,2 @@
+module WeatherGridHelper
+end
