@@ -37,6 +37,8 @@ gem 'rails_12factor', group: :production
 gem 'bootstrap-sass'
 #Devise for authentication
 gem 'devise'
+#Better Print for Rails Console
+gem 'awesome_print'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
