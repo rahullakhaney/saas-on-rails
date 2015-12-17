@@ -39,6 +39,12 @@ gem 'bootstrap-sass'
 gem 'devise'
 #Better Print for Rails Console
 gem 'awesome_print'
+#Sidekiq for background processing
+gem 'sidekiq'
+#For sending emails in the background
+gem 'devise-async'
+#Web Server
+gem 'puma'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
