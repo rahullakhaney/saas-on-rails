@@ -45,6 +45,12 @@ gem 'sidekiq'
 gem 'devise-async'
 #Web Server
 gem 'puma'
+#User Gravatar
+gem 'gravatarify'
+#Toastr for notifications
+gem 'toastr-rails'
+#Simple Form
+gem 'simple_form'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
