@@ -1,0 +1,32 @@
+<%= javascript_include_tag "https://js.stripe.com/v2/" %>
+
+<%= form_tag "/subscriptions/update_card_details", id: "payment-form" do %>
+  <span class="payment-errors"></span>
+
+  
+
+  <div class="form-group">
+    <label for="number">Card Number</label>
+      <input type="text" size="20" id="number" class="form-control" data-stripe="number"/>
+  </div>
+
+  <div class="form-group">
+    <label for="cvc">CVC</label>
+      <input type="text" id="cvc" size="4" class="form-control" data-stripe="cvc"/>
+  </div>
+
+  <div class="form-group">
+    <label for="exp">Expiration (MM/YYYY)</label>
+      <input type="text" size="2" id="exp" class="form-control" data-stripe="exp-month"/>
+    <span> / </span>
+    <input type="text" size="4" class="form-control" data-stripe="exp-year"/>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit Payment</button>
+<% end %>
+
+<script type="text/javascript">
+  // This identifies your website in the createToken call below
+  Stripe.setPublishableKey('pk_test_Gr5AMwtttijUnTMZvvxmJLn3');
+  // ...
+</script

@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
 
         validate :email_is_unique, on: :create
         after_create :create_account
-
+        def devise_confirmable?
+            false
+        end
       	  
 
      	private

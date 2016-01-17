@@ -51,6 +51,12 @@ gem 'gravatarify'
 gem 'toastr-rails'
 #Simple Form
 gem 'simple_form'
+#Stripe Gem for payment processing
+gem 'stripe'
+#Figaro Gem for ENV
+gem 'figaro'
+# Ionicons for better icons
+gem 'ionicons-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
