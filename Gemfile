@@ -57,6 +57,8 @@ gem 'stripe'
 gem 'figaro'
 # Ionicons for better icons
 gem 'ionicons-rails'
+#Gem for processing Stripe events
+gem 'stripe_event'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -69,5 +71,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  #Ultrahook for forwarding stripe events
+  gem 'ultrahook'
 end
 

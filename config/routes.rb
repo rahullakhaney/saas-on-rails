@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  mount StripeEvent::Engine, at: '/stripe-event' #provide a custome path
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
