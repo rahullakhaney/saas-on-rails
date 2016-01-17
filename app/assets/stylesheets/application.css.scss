@@ -2,7 +2,13 @@
 @import "bootstrap";
 @import "toastr";
 @import 'ionicons';
+@brand-primary = #F34A53;
 
 body {
 	font-family: 'Open Sans', sans-serif;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
 }
