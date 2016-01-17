@@ -8,7 +8,17 @@ body {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.center {
+  text-align: center;
+}
+
 .navbar-default {
     background-color: transparent;
     border-color: transparent;
+}
+
+.img-home-fix {
+	width: 50em;
+	display: block;
+	margin: auto;
 }
