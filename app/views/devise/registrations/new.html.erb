@@ -7,11 +7,13 @@
     <%= f.input :email, required: true, autofocus: true, :error => false %>
     <%= f.input :password, required: true, :error => false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
+    <%= f.input :subdomain, required: true, :input_html => { class: 'form-control' } %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
-
+<% unless request.subdomain.blank? || request.subdomain == "www" %>
 <%= render "devise/shared/links" %>
+<% end %>

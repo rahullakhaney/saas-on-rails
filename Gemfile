@@ -60,6 +60,11 @@ gem 'ionicons-rails'
 #Gem for processing Stripe events
 gem 'stripe_event'
 
+#For Tenantizing database
+gem 'apartment'
+#For storing tenant name in sidekiq
+gem 'apartment-sidekiq'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

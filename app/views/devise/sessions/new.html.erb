@@ -11,5 +11,6 @@
     <%= f.button :submit, "Log in" %>
   </div>
 <% end %>
-
+<% if request.subdomain.blank? || request.subdomain == "www" %>
 <%= render "devise/shared/links" %>
+<% end %>
