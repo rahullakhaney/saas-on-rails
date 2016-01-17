@@ -11,8 +11,16 @@
 <%= render 'shared/header' %>
 <%= render 'shared/message' %>
 <div class="container">
+<div data-no-turbolink>
+<script type="text/javascript">!function(t){function e(n){if(r[n])return r[n].exports;var o=r[n]={exports:{},id:n,loaded:!1};return t[n].call(o.exports,o,o.exports,e),o.loaded=!0,o.exports}var r={};return e.m=t,e.c=r,e.p="",e(0)}([function(t,e){!function(){var t;return t=window.driftt=window.driftt||[],t.init?void 0:t.invoked?void(window.console&&console.error&&console.error("Driftt snippet included twice.")):(t.invoked=!0,t.methods=["identify","track","reset","debug","show","ping","page","hide","off","on"],t.factory=function(e){return function(){var r;return r=Array.prototype.slice.call(arguments),r.unshift(e),t.push(r),t}},t.methods.forEach(function(e){t[e]=t.factory(e)}),t.load=function(){var t,e,r,n;t=3e5,n=Math.ceil(new Date/t)*t,r=document.createElement("script"),r.type="text/javascript",r.async=!0,r.src="https://js.driftt.com/include/"+n+"/rnebrbgg2dhz.js",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(r,e)},t.SNIPPET_VERSION="0.1.0",t.load())}()}]);
+</script>
+<% if user_signed_in? %>
+<script>
+driftt.identify('<%= current_user.id %>', { email: '<%= current_user.email %>' });
+</script>
+</div>
+<% end %>
 <%= yield %>
 </div>
-
 </body>
 </html>
