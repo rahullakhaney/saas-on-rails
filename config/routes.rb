@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }
+  devise_for :users, controllers: { registrations: "registrations", sessions: "sessions" }, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', :edit => 'settings', sign_up: 'register'}
   resources :weather_grid
 
   get "/subscriptions/cancel_subscription"  => "subscriptions#cancel_subscription"
