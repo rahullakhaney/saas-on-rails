@@ -8,6 +8,11 @@ class User < ActiveRecord::Base
 
         validate :email_is_unique, on: :create
         validate :subdomain_is_unique, on: :create
+        validates :company_name, presence: true, length: {maximum: 50}
+        validates :company_website, length: {maximum: 50}
+        validates :accent_color, length: {maximum: 7}
+        validates :title, presence: true, length: {maximum: 50}
+        validates :subtitle, presence: true, length: {maximum: 100}
         after_validation :create_tenant
         after_create :create_account
         after_create :add_role_to_user

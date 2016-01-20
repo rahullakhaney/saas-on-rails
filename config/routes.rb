@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :subscriptions
 
   root 'home#index'
+  get 'dashboard' => 'home#dashboard'
+  get 'timeline' => 'home#timeline'
+  
 
   mount StripeEvent::Engine, at: '/stripe-event' #provide a custome path
 

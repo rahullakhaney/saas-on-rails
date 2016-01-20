@@ -25,6 +25,17 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
   	devise_parameter_sanitizer.for(:sign_up) << :subdomain
+    devise_parameter_sanitizer.for(:sign_up) << :company_name
+    devise_parameter_sanitizer.for(:sign_up) << :company_website
+    devise_parameter_sanitizer.for(:sign_up) << :accent_color
+    devise_parameter_sanitizer.for(:sign_up) << :title
+    devise_parameter_sanitizer.for(:sign_up) << :subtitle
+    devise_parameter_sanitizer.for(:account_update) << :company_name
+    devise_parameter_sanitizer.for(:account_update) << :company_website
+    devise_parameter_sanitizer.for(:account_update) << :accent_color
+    devise_parameter_sanitizer.for(:account_update) << :title
+    devise_parameter_sanitizer.for(:account_update) << :subtitle
+
     devise_parameter_sanitizer.for(:invite) << :subdomain
   end
 

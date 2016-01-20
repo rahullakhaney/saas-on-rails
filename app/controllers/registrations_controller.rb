@@ -23,5 +23,9 @@ class RegistrationsController < Devise::RegistrationsController
         new_user_session_url(subdomain: resource.subdomain)
    end
 
+   def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
    
 end

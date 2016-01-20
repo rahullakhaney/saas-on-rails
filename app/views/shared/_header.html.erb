@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
       </button>
       <%= link_to root_path, class: 'navbar-brand' do %>
-        <i class="ion-ionic"></i> Saasonrails
+        Productpage
       <% end %>
     </div>
 
@@ -20,12 +20,16 @@
       
       
       <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
       <li> <a href="#">@Productpage</a> </li>
+      <% end %>
       <% unless user_signed_in? %>
         <% if request.subdomain.blank? || request.subdomain == "www" %>
         <li><%= link_to "Register", new_user_registration_path %></li>
         <% else %>
+        
         <li><%= link_to "Login", new_user_session_path %></li>
+        
         <% end %>
 
         <% else %>

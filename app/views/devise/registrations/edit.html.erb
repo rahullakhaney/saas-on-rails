@@ -12,10 +12,19 @@
 
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
   </div>
 
   <%= f.input :subdomain, input_html: {:value => (current_user ? current_user.subdomain : '') + ".productpage.co", :readonly => true} %>
+
+  <%= f.input :company_name, required: true, :input_html => { class: 'form-control' } %>
+    <%= f.input :company_website, :input_html => { class: 'form-control' } %>
+    <%= f.input :accent_color, required: true, :input_html => { class: 'form-control' } %>
+    <%= f.input :title, required: true, :input_html => { class: 'form-control' } %>
+    <%= f.input :subtitle, required: true, :input_html => { class: 'form-control' } %>
+
+<div class="form-inputs">
+  <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+</div>
 
   <div class="form-actions">
     <%= f.button :submit, "Update" %>

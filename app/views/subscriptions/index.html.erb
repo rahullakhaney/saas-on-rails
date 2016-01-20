@@ -2,16 +2,22 @@
 
 	<% if @account.active_until > Time.now %>
 		Your subscription is active until <%= @account.active_until %> 
+		<%= link_to "Change Subscription", edit_subscription_path(@account.id), class: 'btn btn-primary' %>
+
+<%= link_to "Cancel Subscription", subscriptions_cancel_subscription_path, class: 'btn btn-primary' %>
+
+<%= link_to "Update Card", subscriptions_update_card_path, class: 'btn btn-primary' %>
 	<% else %>
 		Your subscription expired on <%= @account.active_until %>
+		<%= link_to "Renew Subscription", edit_subscription_path(@account.id), class: 'btn btn-primary' %>
 	<% end %>
 
 <% else %>
 	You do not have a subscription plan.
 <% end %>
 
-<%= link_to "Change Subscription", edit_subscription_path(@account.id), class: 'btn btn-primary' %>
+<% unless @account.stripe_plan_id %>
 
-<%= link_to "Cancel Subscription", subscriptions_cancel_subscription_path, class: 'btn btn-primary' %>
+<%= link_to "New Subscription", new_subscription_path, class: 'btn btn-primary' %>
 
-<%= link_to "Update Card", subscriptions_update_card_path, class: 'btn btn-primary' %>
+<% end %>
